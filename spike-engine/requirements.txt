@@ -1,0 +1,16 @@
+# spike-engine — requirements.txt
+# DevRails PoC | PRD-001 v1.0
+#
+# Phase 1 scaffold: placeholder only.
+# Full dependencies added in Phase 2 (TASK-043).
+#
+# Expected Phase 2 additions:
+#   google-cloud-monitoring    — Cloud Monitoring API (MetricServiceClient)
+#   google-cloud-firestore     — Firestore writes via Firebase Admin SDK
+#   firebase-admin             — Firebase Admin SDK (bypasses Security Rules)
+#   python-dotenv              — Load .env for local development
+#
+# Install (from spike-engine/ with venv active):
+#   pip install -r requirements.txt
+
+# Placeholder — Phase 2 dependencies added in TASK-043

@@ -1,0 +1,11 @@
+# infra/
+# DevRails PoC | PRD-001 v1.0
+#
+# Infrastructure configuration directory.
+# Phase 4 contents (EPIC-012):
+#   - Cloud Run service definition references
+#   - Cloud Scheduler configuration notes
+#   - Secret Manager setup reference
+#   - Deployment scripts and helpers
+#
+# Placeholder — content added in Phase 4.
