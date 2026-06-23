@@ -22,6 +22,8 @@ spike-engine/credentials/*.json
 .env.production
 .env.production.local
 .env.*
+!.env.example
+!web-app/.env.example
 
 # -----------------------------------------------------------------------------
 # Node / Next.js (web-app)
