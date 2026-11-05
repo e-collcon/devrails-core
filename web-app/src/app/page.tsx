@@ -1,19 +1,21 @@
-// DevRails — web-app root page
-// PRD-001 v1.0 | Phase 1 scaffold
+// DevRails — web-app home placeholder
+// PRD-001 v1.0 | EPIC-016/EPIC-017
 //
-// Phase 3 (EPIC-002): This page will redirect authenticated users to /dashboard
-// and unauthenticated users to /login via Firebase Auth state check.
-// For now it renders a minimal placeholder.
+// Placeholder for the page users land on after signing in (see
+// src/app/signed-in/SignedInPageClient.tsx). This will become the
+// project/environment picker + settings/notifications/profile home;
+// the real dashboard opens once a project is selected. Not gated by
+// auth yet — that's a separate follow-up, not part of this pass.
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8">
-      <h1 className="text-2xl font-semibold text-gray-800">DevRails</h1>
-      <p className="mt-2 text-gray-500">
-        GCP usage guardrail — Free Tier Watch
-      </p>
-      <p className="mt-6 text-sm text-gray-400">
-        Phase 1 scaffold — auth and dashboard implemented in Phase 3
+    <main className="section-grid flex min-h-screen flex-col items-center justify-center p-8 text-center">
+      <img src="/devrails-logo-black.png" alt="DevRails" className="mb-6 block" style={{ height: 32 }} />
+      <h1 className="text-2xl font-semibold text-ink">Welcome to DevRails</h1>
+      <p className="mt-3 max-w-[520px] text-sm text-ink-soft">
+        This is the DevRails webapp homepage where users manage their projects, access
+        settings, see notifications, and manage their profile. This is not yet the
+        dashboard.
       </p>
     </main>
   );
