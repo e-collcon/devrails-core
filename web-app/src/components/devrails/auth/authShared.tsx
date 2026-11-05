@@ -65,7 +65,7 @@ export function AuthShell({ children }: { children: React.ReactNode }) {
           <a href="/">
             <img src="/devrails-logo-black.png" alt="DevRails" style={{ height: 26, display: "block" }} />
           </a>
-          <span className="font-mono text-[11px] text-ink-muted">// GCP usage guardrails · $1/month</span>
+          <span className="font-mono text-[11px] text-ink-muted">{"// GCP usage guardrails · $1/month"}</span>
         </div>
       </header>
 
@@ -87,7 +87,7 @@ export function AuthShell({ children }: { children: React.ReactNode }) {
         className="font-mono text-ink-muted"
         style={{ position: "relative", zIndex: 10, padding: "0 24px 24px", textAlign: "center", fontSize: 11 }}
       >
-        // an Elmscorp product · firebase auth · © 2026
+        {"// an Elmscorp product · firebase auth · © 2026"}
       </footer>
     </div>
   );

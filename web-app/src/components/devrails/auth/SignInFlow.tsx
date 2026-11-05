@@ -145,7 +145,7 @@ export function SignInFlow({
         <StatusCard label="[ AUTH.RESOLVING ]">
           <Spinner dark size={26} />
           <h1 className="mt-4 text-[20px] font-bold tracking-[-0.02em] text-ink">Checking your session…</h1>
-          <p className="mt-2 text-[14px] text-ink-soft">One moment while we confirm whether you're already signed in.</p>
+          <p className="mt-2 text-[14px] text-ink-soft">One moment while we confirm whether you&apos;re already signed in.</p>
         </StatusCard>
       </>
     );
@@ -189,7 +189,7 @@ export function SignInFlow({
             <LifeBuoy size={16} />
             Contact support
           </a>
-          <p className="mt-4 font-mono text-[11px] text-ink-muted">// auth/user-disabled · terminal state</p>
+          <p className="mt-4 font-mono text-[11px] text-ink-muted">{"// auth/user-disabled · terminal state"}</p>
         </div>
       </>
     );
@@ -243,9 +243,9 @@ export function SignInFlow({
 
         {isDev ? (
           <p className="mt-4 text-center font-mono text-[11px] leading-[1.6] text-ink-muted">
-            // preview states: /signin?state=err-network · err-popup-blocked · err-cancelled
+            {"// preview states: /signin?state=err-network · err-popup-blocked · err-cancelled"}
             <br />
-            // err-disabled · redirecting · resolving · info-session-expired
+            {"// err-disabled · redirecting · resolving · info-session-expired"}
           </p>
         ) : null}
       </div>
