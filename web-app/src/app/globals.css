@@ -1,8 +1,14 @@
+@import "../styles/tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text-primary);
+}
 
 /*
  * DevRails design system — Firecrawl-inspired, developer-first.
@@ -19,7 +25,7 @@
   --radius: 0.75rem;
   /* Surfaces */
   --background: #ffffff;
-  --surface: #F5F7FA;                          /* Surface */
+  /* --surface comes from styles/tokens.css (light + dark) */
   --surface-2: #EEF1F6;                        /* Surface stronger */
   --grid: #E5E7EB;                             /* Border */
   /* Text */
@@ -63,7 +69,7 @@
   --accent-foreground: var(--ink);
   --destructive: #EF4444;
   --destructive-foreground: #ffffff;
-  --border: #E5E7EB;
+  /* --border comes from styles/tokens.css (light + dark) */
   --input: #E5E7EB;
   --ring: var(--flame);
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
