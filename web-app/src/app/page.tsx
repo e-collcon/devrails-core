@@ -4,8 +4,11 @@
 // Placeholder for the page users land on after signing in (see
 // src/app/signed-in/SignedInPageClient.tsx). This will become the
 // project/environment picker + settings/notifications/profile home;
-// the real dashboard opens once a project is selected. Not gated by
-// auth yet — that's a separate follow-up, not part of this pass.
+// the real dashboard opens once a project is selected.
+//
+// TODO (EPIC-002, TASK-012): gate by auth state — signed-out users → /signin.
+// Until a project picker exists, the Contract v1.3 dashboard (engine-generated
+// fixtures) is linked from here.
 
 export default function Home() {
   return (
@@ -17,6 +20,9 @@ export default function Home() {
         settings, see notifications, and manage their profile. This is not yet the
         dashboard.
       </p>
+      <a href="/dashboard" className="mt-6 text-sm font-semibold text-flame underline underline-offset-4">
+        Open the dashboard preview
+      </a>
     </main>
   );
 }

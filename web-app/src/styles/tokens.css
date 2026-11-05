@@ -1,0 +1,84 @@
+/*
+ * DevRails Design System tokens — light and dark (DS v2, 2026-10-26).
+ * Generated from the same palette the canvas Dashboard and dev.thedevrails.com use.
+ * Note: `--white` is the raised-surface token; in dark mode it is a dark navy.
+ */
+:root,
+[data-theme="light"] {
+  --deep-azure: #0B3D91;
+  --deep-azure-strong: #082E6E;
+  --deep-azure-tint: #EEF3FB;
+  --electric-purple: #6D5DF6;
+  --electric-purple-strong: #4F3FD8;
+  --link: #6D5DF6;
+  --tosca: #35C6A7;
+  --tosca-strong: #0E7C66;
+  --tosca-tint: #E9F8F4;
+  --deep-navy: #08121F;
+  --border: #E5E7EB;
+  --border-strong: #CBD5E1;
+  --surface: #F5F7FA;
+  --white: #FFFFFF;
+  --text-primary: #08121F;
+  --text-secondary: #334155;
+  --on-primary: #FFFFFF;
+  --on-error: #FFFFFF;
+  --success: #22C55E;
+  --success-strong: #15803D;
+  --success-tint: #ECFDF3;
+  --success-line: #BBF7D0;
+  --warning: #F59E0B;
+  --warning-strong: #B45309;
+  --warning-tint: #FFF7E6;
+  --warning-line: #FDE3B0;
+  --error: #EF4444;
+  --error-strong: #B91C1C;
+  --error-tint: #FEF2F2;
+  --error-line: #FECACA;
+  --info: #0EA5E9;
+  --info-strong: #0369A1;
+  --info-tint: #F0F9FF;
+  --info-line: #BAE6FD;
+  --shadow-thumb: 0 1px 3px #08121f33;
+}
+
+[data-theme="dark"] {
+  --deep-azure: #8AB4FF;
+  --deep-azure-strong: #B3CDFF;
+  --deep-azure-tint: #15294A;
+  --electric-purple: #A99CFF;
+  --electric-purple-strong: #C7BFFF;
+  --link: #A99CFF;
+  --tosca: #35C6A7;
+  --tosca-strong: #5FE3C6;
+  --tosca-tint: #0C2B2A;
+  --deep-navy: #050B14;
+  --border: #253650;
+  --border-strong: #3A5070;
+  --surface: #08121F;
+  --white: #0E1A2B;
+  --text-primary: #E8EDF5;
+  --text-secondary: #9FB0C6;
+  --on-primary: #08121F;
+  --on-error: #2A0B0E;
+  --success: #22C55E;
+  --success-strong: #4ADE80;
+  --success-tint: #0D2A1D;
+  --success-line: #1D5C3A;
+  --warning: #F59E0B;
+  --warning-strong: #FBBF24;
+  --warning-tint: #2D2210;
+  --warning-line: #6B4A12;
+  --error: #EF4444;
+  --error-strong: #FCA5A5;
+  --error-tint: #34151A;
+  --error-line: #7A2530;
+  --info: #0EA5E9;
+  --info-strong: #7DD3FC;
+  --info-tint: #0B2638;
+  --info-line: #12506F;
+  --shadow-thumb: 0 1px 3px #00000080;
+}
+
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
