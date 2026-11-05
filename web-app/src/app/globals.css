@@ -1,3 +1,191 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/*
+ * DevRails design system — Firecrawl-inspired, developer-first.
+ * Light mode, technical, minimal with subtle layering.
+ *
+ * Ported from devrails-landing-page's styles.css (EPIC-016 handoff), which
+ * is written for Tailwind v4 (@theme inline, @import "tailwindcss"). This
+ * repo runs Tailwind v3, so only the plain-CSS parts (custom properties +
+ * utility classes) are carried over; the v4 theme-to-utility mapping is
+ * replicated in tailwind.config.ts's theme.extend instead.
+ */
+
+:root {
+  --radius: 0.75rem;
+  /* Surfaces */
+  --background: #ffffff;
+  --surface: #F5F7FA;                          /* Surface */
+  --surface-2: #EEF1F6;                        /* Surface stronger */
+  --grid: #E5E7EB;                             /* Border */
+  /* Text */
+  --foreground: #08121F;                       /* Deep Navy */
+  --ink: #08121F;
+  --ink-soft: #334155;                         /* Light Slate */
+  --ink-muted: #64748B;                        /* Muted slate */
+  /* Brand — Deep Azure (primary). Token name kept for compatibility. */
+  --flame: #0B3D91;                            /* Deep Azure */
+  --flame-hover: #082E6E;                      /* Deep Azure hover */
+  --glow: #35C6A7;                             /* Tosca highlight */
+  /* Secondary — Electric Purple (interaction / AI) */
+  --secondary-accent: #6D5DF6;
+  --secondary-accent-hover: #5546E0;
+  --ai-accent: #8B5CF6;
+  /* Semantic */
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --info: #0EA5E9;
+  /* Danger (alert red / hard killswitch) — Error semantic */
+  --danger: #EF4444;
+  --danger-hover: #DC2626;
+  --danger-soft: #FEF2F2;
+  --danger-border: #FECACA;
+  --danger-text: #991B1B;
+  --danger-dark-accent: #F87171;
+  --danger-dark-bg: rgba(248, 113, 113, 0.12);
+  --danger-dark-border: rgba(248, 113, 113, 0.35);
+  /* Shadcn */
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--flame);
+  --primary-foreground: #ffffff;
+  --secondary: #EEF1F6;
+  --secondary-foreground: var(--ink);
+  --muted: #F5F7FA;
+  --muted-foreground: var(--ink-soft);
+  --accent: #EAE7FE;
+  --accent-foreground: var(--ink);
+  --destructive: #EF4444;
+  --destructive-foreground: #ffffff;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: var(--flame);
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+.dark {
+  /* Light-mode only per brief; keep tokens in case .dark toggled. */
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* ---------- DevRails utilities ---------- */
+
+.font-mono { font-family: var(--font-mono); }
+
+/* Technical grid background */
+.tech-grid {
+  background-image:
+    linear-gradient(to right, rgba(11, 61, 145, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 18, 31, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.tech-grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 40%, rgba(0,0,0,0.55) 20%, transparent 80%);
+          mask-image: radial-gradient(ellipse 65% 55% at 50% 40%, rgba(0,0,0,0.55) 20%, transparent 80%);
+}
+
+/* Subtle infrastructure grid for every page section. Lays a quiet
+   technical texture behind content without harming readability. */
+.section-grid { position: relative; isolation: isolate; }
+.section-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(11, 61, 145, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 18, 31, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.section-grid > * { position: relative; z-index: 1; }
+.dark .section-grid::before {
+  background-image:
+    linear-gradient(to right, rgba(103, 232, 249, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+}
+
+/* Soft card shadow */
+.shadow-soft  { box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+.shadow-card  { box-shadow: 0 20px 60px -20px rgba(15, 23, 42, 0.18); }
+.shadow-flame { box-shadow: 0 14px 40px -14px color-mix(in oklab, var(--flame) 55%, transparent); }
+.shadow-glow  { box-shadow: 0 0 0 1px rgba(37,99,255,0.08), 0 18px 50px -20px color-mix(in oklab, var(--glow) 60%, transparent); }
+
+/* Glass surface (future-ready for glassmorphism) */
+.glass {
+  background: color-mix(in oklab, #ffffff 70%, transparent);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
+}
+
+/* Bracket label e.g. [ 200 OK ] */
+.bracket-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Crosshair marker */
+.crosshair {
+  width: 10px; height: 10px;
+  position: relative;
+}
+.crosshair::before, .crosshair::after {
+  content: ""; position: absolute; background: var(--flame);
+}
+.crosshair::before { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+.crosshair::after  { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 40s linear infinite; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+.animate-pulse-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+/* Ensure sticky navbar (72px) doesn't cover anchored section headings */
+section[id] { scroll-margin-top: 88px; }
+
+/* DevRails form select — custom chevron with symmetric horizontal padding.
+   Right padding matches the left padding (12px / px-3) so the chevron is
+   inset from the edge by the same amount as the placeholder text. */
+.select-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%2364748b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 8px;
+  padding-right: 36px; /* 12px chevron inset + 12px chevron width + 12px gap */
+}
+.select-field::-ms-expand { display: none; }
